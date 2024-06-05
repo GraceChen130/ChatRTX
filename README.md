@@ -106,10 +106,10 @@ In this project, we use the AWQ int4 quantized models for the LLMs. Before using
     cd model/mistral_model/tokenizer
 
     #Use curl to download the tokenizer files
-    "C:\Windows\System32\curl.exe" -L -o config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/config.json"
-    "C:\Windows\System32\curl.exe" -L -o tokenizer.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer.json"
-    "C:\Windows\System32\curl.exe" -L -o tokenizer.model "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer.model"
-    "C:\Windows\System32\curl.exe" -L -o tokenizer_config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer_config.json"
+    & "C:\Windows\System32\curl.exe" -L -o config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/config.json"
+    & "C:\Windows\System32\curl.exe" -L -o tokenizer.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer.json"
+    & "C:\Windows\System32\curl.exe" -L -o tokenizer.model "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer.model"
+    & "C:\Windows\System32\curl.exe" -L -o tokenizer_config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=mistral7b_hf_tokenizer/tokenizer_config.json"
 
     ```
 
@@ -119,10 +119,10 @@ In this project, we use the AWQ int4 quantized models for the LLMs. Before using
     cd model/mistral_model/model_checkpoints
 
     #Use curl to download the model checkpoint files files
-    "C:\Windows\System32\curl.exe" -L -o config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=config.json"
-	"C:\Windows\System32\curl.exe" -L -o license.txt "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=license.txt"
-	"C:\Windows\System32\curl.exe" -L -o rank0.safetensors "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=rank0.safetensors"
-	"C:\Windows\System32\curl.exe" -L -o README.txt "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=README.txt"
+    & "C:\Windows\System32\curl.exe" -L -o config.json "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=config.json"
+	& "C:\Windows\System32\curl.exe" -L -o license.txt "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=license.txt"
+	& "C:\Windows\System32\curl.exe" -L -o rank0.safetensors "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=rank0.safetensors"
+	& "C:\Windows\System32\curl.exe" -L -o README.txt "https://api.ngc.nvidia.com/v2/models/org/nvidia/team/llama/mistral-7b-int4-chat/1.2/files?redirect=true&path=README.txt"
    
     ```
 
@@ -152,7 +152,7 @@ In this project, we use the AWQ int4 quantized models for the LLMs. Before using
     cd whisper
 
     #Create the relevant directories
-    mkdir whisper_assets whisper_medium_int8_engine
+    "whisper_assets", "whisper_medium_int8_engine" | ForEach-Object { mkdir $_ }
     ```
 
 2. Download model weights and tokenizer
@@ -161,9 +161,9 @@ In this project, we use the AWQ int4 quantized models for the LLMs. Before using
     cd model/whisper/whisper_assets
 
     #Use curl to download the tokenizer and model weights files 
-    "C:\Windows\System32\curl.exe" -L -o mel_filters.npz "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/mel_filters.npz"
-    "C:\Windows\System32\curl.exe" -L -o multilingual.tiktoken "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/multilingual.tiktoken"
-    "C:\Windows\System32\curl.exe" -L -o medium.pt "https://openaipublic.azureedge.net/main/whisper/models/345ae4da62f9b3d59415adc60127b97c714f32e89e936602e85993674d08dcb1/medium.pt"
+    &"C:\Windows\System32\curl.exe" -L -o mel_filters.npz "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/mel_filters.npz"
+    &"C:\Windows\System32\curl.exe" -L -o multilingual.tiktoken "https://raw.githubusercontent.com/openai/whisper/main/whisper/assets/multilingual.tiktoken"
+    &"C:\Windows\System32\curl.exe" -L -o medium.pt "https://openaipublic.azureedge.net/main/whisper/models/345ae4da62f9b3d59415adc60127b97c714f32e89e936602e85993674d08dcb1/medium.pt"
     ```
 
 3. Build command
